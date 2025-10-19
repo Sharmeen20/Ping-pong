@@ -1,7 +1,9 @@
+/* Reset and box-sizing */
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
+/* Theme variables */
 :root {
   --hue: 200;
   --saturation: 50%;
@@ -9,12 +11,14 @@
   --background-color: hsl(var(--hue), var(--saturation), 20%);
 }
 
+/* Body styling */
 body {
   margin: 0;
   background-color: var(--background-color);
   overflow: hidden;
 }
 
+/* Paddle styling */
 .paddle {
   --position: 50;
 
@@ -34,6 +38,7 @@ body {
   right: 1vw;
 }
 
+/* Ball styling */
 .ball {
   --x: 50;
   --y: 50;
@@ -48,11 +53,15 @@ body {
   height: 2.5vh;
 }
 
+/* Score styling */
 .score {
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 7vh;
+
+  /* 👇 Responsive font size using clamp() */
+  font-size: clamp(3vh, 7vw, 7vh);
+
   color: var(--foreground-color);
 }
 
@@ -68,3 +77,4 @@ body {
   text-align: right;
   border-right: .5vh solid var(--foreground-color);
 }
+``
